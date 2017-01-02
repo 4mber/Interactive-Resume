@@ -12,7 +12,7 @@ var bio = {
     "skills": [
         "boating", "singing", "song-writing", "web development"
     ],
-    "bioPic": "images/closeup.jpg"
+    "biopic": "images/closeup.jpg"
 };
 
 
@@ -21,8 +21,9 @@ var education = {
         "name": "Belmont University",
         "location": "Nashville, TN, US",
         "degree": "BM",
-        "major": "Commercial Music: Voice, Music Business Emphasis",
-        "dates": "2009-2013"
+        "majors": "Commercial Music: Voice, Music Business Emphasis",
+        "dates": "2009-2013",
+        "url": "www.belmont.edu"
     }],
     "onlineCourses": [{
         "title": "Front End Web Development Nanodegree",
@@ -37,19 +38,25 @@ var work = {
     "jobs": [{
             "employer": "Leigh & Liam",
             "title": "Singer/Songwriter, Guitarist, Producer, Web Developer",
-            "location": [
-                "Nashville, TN, US",
-                "Oxford, UK"
-            ],
+            "location": "Nashville, TN, US",
             "dates": "July 2012 - Present",
-            "description": "Making up half of the duo Leigh & Liam, I have been responsible for writing vocals, lyrics, background vocals, and guitar parts for original and cover songs, as well as creating and maintaining the websites for this duo and my solo musical endeavors. This position has also given me the opportunity to co-produce recordings and music videos, as well as put together photo shoots and live performances."
+            "description": "Making up half of the duo Leigh & Liam, I have been responsible" +
+            " for writing vocals, lyrics, background vocals, and guitar parts for original" +
+            " and cover songs, as well as creating and maintaining the websites for this duo" +
+            " and my solo musical endeavors. This position has also given me the opportunity to" +
+            " co-produce recordings and music videos, as well as put together photo shoots and live performances."
         },
         {
             "employer": "Yamaha Entertainment Group of America",
             "title": "Artist Relations Coordinator",
             "location": "Nashville, TN, US",
             "dates": "August 2012 - May 2015",
-            "description": "Working up from Intern, to Production Assistant, to Publishing Coordinator, to Artist Relations Coordinator, responsibilities included everything from concert production, event planning, ticketing and catering organization, website design, managing interns, recording studio management, documentary transcription, acquiring new artist endorsement and dealer sales contracts, handling invoices for artist and dealer purchases, and interacting with musicians from many different genres and levels of notoriety."
+            "description": "Working up from Intern, to Production Assistant, to Publishing" +
+            " Coordinator, to Artist Relations Coordinator, responsibilities included everything" +
+            " from concert production, event planning, ticketing and catering organization," +
+            " website design, managing interns, recording studio management, documentary transcription," +
+            " acquiring new artist endorsement and dealer sales contracts, handling invoices for artist" +
+            " and dealer purchases, and interacting with musicians from many different genres and levels of notoriety."
 
         }
     ]
@@ -101,7 +108,7 @@ bio.display = function() {
     $("#topContacts").append(formattedLocation);
     $("#footerContacts").append(formattedLocation);
 
-    formattedPic = HTMLbioPic.replace("%data%", bio.bioPic);
+    formattedPic = HTMLbioPic.replace("%data%", bio.biopic);
     $("#header").append(formattedPic);
     formattedMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
     $("#header").append(formattedMsg);
@@ -161,9 +168,8 @@ education.display = function() {
         var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
         var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
         var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
-
-        $(".education-entry:last").append(formattedSchoolName);
-        $(".education-entry:last").append(formattedSchoolDegree);
+		
+		$(".education-entry:last").append(formattedSchoolName + formattedSchoolDegree);
         $(".education-entry:last").append(formattedSchoolDates);
         $(".education-entry:last").append(formattedSchoolLocation);
         $(".education-entry:last").append(formattedSchoolMajor);
@@ -175,8 +181,7 @@ education.display = function() {
         var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[course].dates);
         var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[course].url);
 
-        $(".education-entry:last").append(formattedOnlineTitle);
-        $(".education-entry:last").append(formattedOnlineSchool);
+        $(".education-entry:last").append(formattedOnlineTitle + formattedOnlineSchool); 
         $(".education-entry:last").append(formattedOnlineDates);
         $(".education-entry:last").append(formattedOnlineURL);
     }
