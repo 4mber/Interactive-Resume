@@ -10,7 +10,7 @@ var bio = {
     },
     "welcomeMessage": "Thank you for your time!",
     "skills": [
-        "boating", "singing", "song-writing", "web development"
+        "web development", "singing", "song-writing", "boating"
     ],
     "biopic": "images/closeup.jpg"
 };
@@ -67,18 +67,16 @@ var projects = {
     "projects": [{
             "title": "Amber's Music",
             "dates": "2016",
-            "description": "This is a website I built for my solo music project.",
+            "description": "Website I built for a solo music project.",
             "images": [
-                "images/altss.jpg",
                 "images/altss.jpg"
             ]
         },
         {
             "title": "Leigh & Liam",
             "dates": "2016",
-            "description": "This is a website I built for my musical duo Leigh & Liam.",
+            "description": "Website I built for the musical duo Leigh & Liam.",
             "images": [
-                "images/lalss.jpg",
                 "images/lalss.jpg"
             ]
         }
